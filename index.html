@@ -1,0 +1,2671 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="theme-color"
+    content="#0d2119">
+
+<title>خالد و سارة | دعوة زفاف</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+
+<!-- QR CODE -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+</script>
+
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --green:#0d2119;
+
+    --green-light:#173c2d;
+
+    --gold:#d4af5f;
+
+    --gold-light:#f2d995;
+
+    --cream:#fff9ec;
+
+    --dark:#08120e;
+
+    --glass:rgba(255,255,255,.09);
+
+    --glass-strong:rgba(255,255,255,.14);
+
+    --border:rgba(242,217,149,.25);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+
+    box-sizing:border-box;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:
+        var(--dark);
+
+    color:white;
+
+    font-family:"Cairo",sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+button,
+input,
+textarea{
+
+    font-family:inherit;
+
+}
+
+
+img{
+
+    max-width:100%;
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+#backgroundImage{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-5;
+
+    background:
+        var(--dark);
+
+    animation:
+        slowBackground 22s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes slowBackground{
+
+    0%{
+
+        transform:
+            scale(1);
+
+    }
+
+    100%{
+
+        transform:
+            scale(1.08);
+
+    }
+
+}
+
+
+.background-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-4;
+
+    background:
+        linear-gradient(
+            rgba(5,20,13,.42),
+            rgba(5,15,11,.72)
+        );
+
+    pointer-events:none;
+
+}
+
+
+.background-glow{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-3;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(242,217,149,.14),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(35,120,75,.15),
+            transparent 35%
+        );
+
+}
+
+
+/* =========================================================
+   OPENING
+========================================================= */
+
+#opening{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#07100c;
+
+    overflow:hidden;
+
+    transition:
+
+        opacity 1.5s ease,
+
+        visibility 1.5s ease;
+
+}
+
+
+#opening.open{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
+
+
+/* =========================================================
+   OPENING FRAME
+========================================================= */
+
+.opening-frame{
+
+    position:absolute;
+
+    inset:20px;
+
+    border:
+        1px solid
+        rgba(242,217,149,.30);
+
+    box-shadow:
+
+        inset 0 0 60px
+        rgba(212,175,95,.10),
+
+        0 0 40px
+        rgba(212,175,95,.08);
+
+    animation:
+        frameGlow 4s ease-in-out infinite alternate;
+
+    z-index:3;
+
+    pointer-events:none;
+
+}
+
+
+@keyframes frameGlow{
+
+    from{
+
+        box-shadow:
+
+            inset 0 0 40px
+            rgba(212,175,95,.05),
+
+            0 0 20px
+            rgba(212,175,95,.04);
+
+    }
+
+    to{
+
+        box-shadow:
+
+            inset 0 0 80px
+            rgba(212,175,95,.17),
+
+            0 0 45px
+            rgba(212,175,95,.12);
+
+    }
+
+}
+
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.envelope{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+
+.envelope img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+.envelope::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:45%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.18),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    animation:
+        shine 6s ease-in-out infinite;
+
+    pointer-events:none;
+
+}
+
+
+@keyframes shine{
+
+    0%,65%{
+
+        left:-120%;
+
+    }
+
+    100%{
+
+        left:160%;
+
+    }
+
+}
+
+
+.opening-text{
+
+    position:absolute;
+
+    bottom:7%;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    white-space:nowrap;
+
+    color:#f5e5c1;
+
+    font-size:.9rem;
+
+    text-shadow:
+        0 2px 12px #000;
+
+    animation:
+        textPulse 2.5s ease-in-out infinite;
+
+    z-index:5;
+
+}
+
+
+@keyframes textPulse{
+
+    0%,100%{
+
+        opacity:.45;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+#main{
+
+    display:none;
+
+    position:relative;
+
+    min-height:100vh;
+
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section{
+
+    position:relative;
+
+    width:100%;
+
+    padding:
+        34px 14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.section + .section{
+
+    padding-top:22px;
+
+}
+
+
+/* =========================================================
+   GLASS
+========================================================= */
+
+.glass{
+
+    position:relative;
+
+    width:min(900px,100%);
+
+    padding:
+        clamp(26px,5vw,55px)
+        clamp(18px,5vw,50px);
+
+    border-radius:30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.045)
+        );
+
+    border:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+
+        0 25px 80px
+        rgba(0,0,0,.40),
+
+        inset 0 1px 0
+        rgba(255,255,255,.12);
+
+    text-align:center;
+
+    overflow:hidden;
+
+}
+
+
+.glass::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(242,217,149,.5),
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   ORNAMENT
+========================================================= */
+
+.ornament{
+
+    color:var(--gold-light);
+
+    font-size:22px;
+
+    letter-spacing:10px;
+
+    margin-bottom:15px;
+
+    opacity:.85;
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.bismillah{
+
+    font-family:"Amiri",serif;
+
+    font-size:
+        clamp(2rem,5vw,3.3rem);
+
+    color:var(--cream);
+
+    margin-bottom:18px;
+
+    text-shadow:
+        0 3px 18px rgba(0,0,0,.4);
+
+}
+
+
+.quran{
+
+    font-family:"Amiri",serif;
+
+    font-size:
+        clamp(1.35rem,3.7vw,2.15rem);
+
+    line-height:2;
+
+    color:#fff8ec;
+
+    max-width:780px;
+
+    margin:auto;
+
+    text-shadow:
+        0 2px 15px rgba(0,0,0,.5);
+
+}
+
+
+.names{
+
+    font-family:"Amiri",serif;
+
+    font-size:
+        clamp(2.7rem,7vw,5rem);
+
+    line-height:1.15;
+
+    color:#fff8ed;
+
+    margin:18px 0;
+
+    white-space:nowrap;
+
+    text-shadow:
+
+        0 3px 20px rgba(0,0,0,.5),
+
+        0 0 25px
+        rgba(212,175,95,.18);
+
+}
+
+
+.names span{
+
+    color:var(--gold-light);
+
+    font-size:.55em;
+
+    margin:
+        0 5px;
+
+}
+
+
+.welcome{
+
+    margin-top:20px;
+
+    color:#e5dccb;
+
+    line-height:2.2;
+
+    font-size:
+        clamp(.95rem,2.3vw,1.15rem);
+
+}
+
+
+/* =========================================================
+   TITLES
+========================================================= */
+
+.section-title{
+
+    font-family:"Amiri",serif;
+
+    color:var(--cream);
+
+    font-size:
+        clamp(2.2rem,5vw,3.5rem);
+
+    margin-bottom:12px;
+
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.date-image{
+
+    width:100%;
+
+    max-height:430px;
+
+    object-fit:cover;
+
+    border-radius:23px;
+
+    display:block;
+
+    margin:
+        10px 0 20px;
+
+    border:
+        1px solid
+        rgba(242,217,149,.2);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35);
+
+}
+
+
+.date-text{
+
+    color:var(--gold-light);
+
+    font-weight:700;
+
+    font-size:1.15rem;
+
+    margin-bottom:22px;
+
+}
+
+
+/* =========================================================
+   COUNTDOWN TITLE
+========================================================= */
+
+.countdown-title{
+
+    font-family:"Amiri",serif;
+
+    color:var(--gold-light);
+
+    font-size:
+        clamp(1.45rem,4vw,2rem);
+
+    margin-bottom:14px;
+
+}
+
+
+/* =========================================================
+   COUNTDOWN GLASS
+========================================================= */
+
+.countdown{
+
+    width:100%;
+
+    padding:
+        17px 12px;
+
+    border-radius:24px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.055)
+        );
+
+    border:
+        1px solid
+        rgba(242,217,149,.25);
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:clamp(7px,2vw,20px);
+
+    direction:rtl;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.10),
+
+        0 15px 40px
+        rgba(0,0,0,.20);
+
+}
+
+
+.counter{
+
+    min-width:0;
+
+    flex:1;
+
+    position:relative;
+
+}
+
+
+.counter:not(:last-child)::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    height:42px;
+
+    width:1px;
+
+    background:
+        rgba(242,217,149,.25);
+
+}
+
+
+.counter strong{
+
+    display:block;
+
+    color:#fff;
+
+    font-size:
+        clamp(1.55rem,5vw,2.6rem);
+
+    line-height:1;
+
+}
+
+
+.counter span{
+
+    display:block;
+
+    color:#d9cdb8;
+
+    font-size:
+        clamp(.65rem,2vw,.78rem);
+
+    margin-top:7px;
+
+}
+
+
+/* =========================================================
+   VENUE
+========================================================= */
+
+.venue-image{
+
+    width:100%;
+
+    max-height:450px;
+
+    object-fit:cover;
+
+    border-radius:23px;
+
+    margin:
+        10px 0 20px;
+
+    border:
+        1px solid
+        rgba(242,217,149,.2);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+
+}
+
+
+.venue-name{
+
+    font-family:"Amiri",serif;
+
+    color:#fff8ed;
+
+    font-size:
+        clamp(2rem,5vw,3rem);
+
+    margin-bottom:4px;
+
+}
+
+
+.venue-address{
+
+    color:#d9cbb8;
+
+    margin-bottom:20px;
+
+    font-size:1rem;
+
+}
+
+
+.map-button{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:min(400px,100%);
+
+    padding:14px 25px;
+
+    border-radius:999px;
+
+    color:#142017;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f3dda8,
+            #c89e50
+        );
+
+    font-weight:800;
+
+    text-decoration:none;
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
+
+}
+
+
+.map-button:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.35);
+
+}
+
+
+/* =========================================================
+   QR CODE
+========================================================= */
+
+.qr-title{
+
+    margin-top:30px;
+
+    margin-bottom:12px;
+
+    color:var(--gold-light);
+
+    font-family:"Amiri",serif;
+
+    font-size:1.45rem;
+
+}
+
+
+.qr-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto;
+
+    width:180px;
+
+    height:180px;
+
+    padding:10px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.35);
+
+}
+
+
+#qrcode{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+#qrcode img{
+
+    width:160px !important;
+
+    height:160px !important;
+
+    display:block;
+
+}
+
+
+.qr-hint{
+
+    margin-top:10px;
+
+    color:#d8cdbd;
+
+    font-size:.82rem;
+
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-wrapper{
+
+    overflow:hidden;
+
+    width:100%;
+
+}
+
+
+.gallery{
+
+    display:flex;
+
+    gap:12px;
+
+    overflow-x:auto;
+
+    scroll-behavior:smooth;
+
+    scrollbar-width:none;
+
+    cursor:grab;
+
+    padding:
+        8px 2px 15px;
+
+    direction:ltr;
+
+}
+
+
+.gallery::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+
+.gallery img{
+
+    flex:
+        0 0
+        clamp(230px,70vw,310px);
+
+    height:
+        clamp(280px,70vw,390px);
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    border:
+        1px solid
+        rgba(242,217,149,.22);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.35);
+
+    transition:
+        transform .4s,
+        filter .4s;
+
+}
+
+
+.gallery img:hover{
+
+    transform:
+        scale(1.025);
+
+    filter:
+        brightness(1.08);
+
+}
+
+
+.gallery-hint{
+
+    color:#cdbda7;
+
+    font-size:.8rem;
+
+    margin-top:5px;
+
+}
+
+
+/* =========================================================
+   INSTRUCTIONS
+========================================================= */
+
+.instructions{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+
+    margin-top:18px;
+
+}
+
+
+.instruction{
+
+    padding:
+        28px 15px;
+
+    border-radius:24px;
+
+    background:
+        rgba(255,255,255,.065);
+
+    border:
+        1px solid
+        rgba(242,217,149,.2);
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+
+.instruction-icon{
+
+    width:92px;
+
+    height:92px;
+
+    margin:
+        0 auto 15px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        rgba(0,0,0,.18);
+
+    border:
+        1px solid
+        rgba(242,217,149,.35);
+
+    overflow:hidden;
+
+}
+
+
+.instruction-icon img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    padding:6px;
+
+}
+
+
+.instruction h3{
+
+    font-family:"Amiri",serif;
+
+    color:#fff8ed;
+
+    font-size:1.6rem;
+
+    margin-bottom:6px;
+
+}
+
+
+.instruction p{
+
+    color:#d7c9b5;
+
+    font-size:.9rem;
+
+    line-height:1.9;
+
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final-title{
+
+    font-family:"Amiri",serif;
+
+    color:#fff8ed;
+
+    font-size:
+        clamp(2.2rem,6vw,3.8rem);
+
+    margin-bottom:12px;
+
+}
+
+
+.final-text{
+
+    color:#ddcfbb;
+
+    line-height:2;
+
+    margin-bottom:20px;
+
+    font-size:
+        clamp(.95rem,2.3vw,1.1rem);
+
+}
+
+
+.signature{
+
+    font-family:"Amiri",serif;
+
+    color:var(--gold-light);
+
+    font-size:2.3rem;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    text-align:center;
+
+    padding:
+        30px 20px 70px;
+
+    background:
+        rgba(4,12,8,.65);
+
+    border-top:
+        1px solid
+        rgba(242,217,149,.12);
+
+    color:#cdbda7;
+
+}
+
+
+footer strong{
+
+    font-family:"Amiri",serif;
+
+    color:#fff4df;
+
+    font-size:1.4rem;
+
+}
+
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+#musicButton{
+
+    position:fixed;
+
+    top:18px;
+
+    left:18px;
+
+    z-index:3000;
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(242,217,149,.3);
+
+    background:
+        rgba(8,25,17,.60);
+
+    backdrop-filter:
+        blur(12px);
+
+    color:var(--gold-light);
+
+    cursor:pointer;
+
+    display:none;
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+        translateY(20px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:650px){
+
+    .section{
+
+        padding:
+            25px 10px;
+
+    }
+
+
+    .section + .section{
+
+        padding-top:15px;
+
+    }
+
+
+    .glass{
+
+        padding:
+            25px 15px;
+
+        border-radius:24px;
+
+    }
+
+
+    .names{
+
+        font-size:
+            clamp(2.15rem,9vw,3.5rem);
+
+    }
+
+
+    .countdown{
+
+        gap:3px;
+
+        padding:
+            15px 5px;
+
+    }
+
+
+    .counter strong{
+
+        font-size:
+            1.45rem;
+
+    }
+
+
+    .counter span{
+
+        font-size:
+            .62rem;
+
+    }
+
+
+    .counter:not(:last-child)::after{
+
+        height:32px;
+
+    }
+
+
+    .instructions{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .gallery img{
+
+        flex-basis:76vw;
+
+        height:95vw;
+
+    }
+
+
+    .opening-frame{
+
+        inset:12px;
+
+    }
+
+
+    .qr-box{
+
+        width:170px;
+
+        height:170px;
+
+    }
+
+
+    #qrcode img{
+
+        width:150px !important;
+
+        height:150px !important;
+
+    }
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none!important;
+
+        transition:none!important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<img
+    id="backgroundImage"
+    src="background.jpg"
+    alt="">
+
+
+<div class="background-overlay"></div>
+
+<div class="background-glow"></div>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio
+    id="music"
+    loop
+    preload="auto">
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<!-- =====================================================
+     OPENING
+===================================================== -->
+
+<div id="opening">
+
+    <div class="opening-frame"></div>
+
+
+    <div
+        class="envelope"
+        id="envelope">
+
+        <img
+            src="cover.jpg"
+            alt="دعوة الزفاف">
+
+    </div>
+
+
+    <div class="opening-text">
+
+        اضغط على الرسالة لفتح الدعوة
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MUSIC BUTTON
+===================================================== -->
+
+<button
+    id="musicButton"
+    type="button"
+    aria-label="الموسيقى">
+
+    ♫
+
+</button>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main id="main">
+
+
+<!-- =====================================================
+     SECTION 1 — INTRO
+===================================================== -->
+
+<section class="section">
+
+<div class="glass reveal">
+
+    <div class="ornament">
+        ✦ ✦ ✦
+    </div>
+
+
+    <h1 class="bismillah">
+
+        بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ
+
+    </h1>
+
+
+    <p class="quran">
+
+        ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم
+        مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+        لِّتَسْكُنُوا إِلَيْهَا
+        وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+        ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ
+        لِّقَوْمٍ يَتَفَكَّرُونَ ﴾
+
+    </p>
+
+
+    <div class="names">
+
+        خالد
+
+        <span>♡</span>
+
+        سارة
+
+    </div>
+
+
+    <p class="welcome">
+
+        بكل الحب والفرح، يسعدنا أن نشارككم
+        أجمل لحظات حياتنا، وندعوكم لمشاركتنا
+        فرحتنا في هذا اليوم المميز.
+
+        حضوركم معنا يجعل فرحتنا أجمل،
+        وذكرياتنا أكثر دفئًا وجمالًا.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 2 — DATE
+===================================================== -->
+
+<section class="section">
+
+<div class="glass reveal">
+
+    <div class="ornament">
+        ✧
+    </div>
+
+
+    <h2 class="section-title">
+
+        موعد فرحتنا
+
+    </h2>
+
+
+    <img
+        src="date.jpg"
+        class="date-image"
+        alt="موعد الزفاف">
+
+
+    <p class="date-text">
+
+        الخميس 10 سبتمبر 2026
+        — ابتداءً من الساعة 15:00
+
+    </p>
+
+
+    <div class="countdown-title">
+
+        الوقت المتبقي على فرحتنا
+
+    </div>
+
+
+    <div
+        class="countdown"
+        id="countdown">
+
+
+        <div class="counter">
+
+            <strong id="days">
+                00
+            </strong>
+
+            <span>
+                يوم
+            </span>
+
+        </div>
+
+
+        <div class="counter">
+
+            <strong id="hours">
+                00
+            </strong>
+
+            <span>
+                ساعة
+            </span>
+
+        </div>
+
+
+        <div class="counter">
+
+            <strong id="minutes">
+                00
+            </strong>
+
+            <span>
+                دقيقة
+            </span>
+
+        </div>
+
+
+        <div class="counter">
+
+            <strong id="seconds">
+                00
+            </strong>
+
+            <span>
+                ثانية
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 3 — VENUE
+===================================================== -->
+
+<section class="section">
+
+<div class="glass reveal">
+
+    <div class="ornament">
+        ✦
+    </div>
+
+
+    <h2 class="section-title">
+
+        مكان الحفل
+
+    </h2>
+
+
+    <img
+        src="venue.jpg"
+        class="venue-image"
+        alt="قاعة فراولة تريولي">
+
+
+    <h3 class="venue-name">
+
+        قاعة فراولة تريولي
+
+    </h3>
+
+
+    <p class="venue-address">
+
+        باب الواد
+
+    </p>
+
+
+    <a
+        class="map-button"
+        href="https://maps.app.goo.gl/98e6VtAHeRUcicar6"
+        target="_blank"
+        rel="noopener">
+
+        📍 فتح الموقع على Google Maps
+
+    </a>
+
+
+    <!-- QR -->
+
+    <div class="qr-title">
+
+        امسح الرمز للوصول إلى الموقع
+
+    </div>
+
+
+    <div class="qr-box">
+
+        <div id="qrcode"></div>
+
+    </div>
+
+
+    <div class="qr-hint">
+
+        يمكنك مسح الرمز بكاميرا الهاتف
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 4 — GALLERY
+===================================================== -->
+
+<section class="section">
+
+<div class="glass reveal">
+
+    <div class="ornament">
+        ♡ ✦ ♡
+    </div>
+
+
+    <h2 class="section-title">
+
+        معرض الصور
+
+    </h2>
+
+
+    <p class="welcome">
+
+        بعض اللحظات الجميلة التي نشارككم إياها 🤍
+
+    </p>
+
+
+    <div class="gallery-wrapper">
+
+        <div
+            class="gallery"
+            id="gallery">
+
+
+            <img
+                src="gallery1.jpg"
+                alt="صورة 1">
+
+
+            <img
+                src="gallery2.jpg"
+                alt="صورة 2">
+
+
+            <img
+                src="gallery3.jpg"
+                alt="صورة 3">
+
+
+            <img
+                src="gallery4.jpg"
+                alt="صورة 4">
+
+
+            <img
+                src="gallery5.jpg"
+                alt="صورة 5">
+
+
+            <img
+                src="gallery6.jpg"
+                alt="صورة 6">
+
+
+        </div>
+
+    </div>
+
+
+    <div class="gallery-hint">
+
+        اسحب الصور يمينًا ويسارًا
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 5 — INSTRUCTIONS
+===================================================== -->
+
+<section class="section">
+
+<div class="glass reveal">
+
+    <div class="ornament">
+        ⚠ ✦ ⚠
+    </div>
+
+
+    <h2 class="section-title">
+
+        تعليمات خاصة
+
+    </h2>
+
+
+    <p class="welcome">
+
+        حرصًا على خصوصية وجمال هذه المناسبة،
+        نرجو منكم الالتزام بالتعليمات التالية.
+
+    </p>
+
+
+    <div class="instructions">
+
+
+        <!-- NO PHOTO -->
+
+        <div class="instruction">
+
+
+            <div class="instruction-icon">
+
+                <img
+                    src="no-photo.png"
+                    alt="ممنوع التصوير">
+
+            </div>
+
+
+            <h3>
+
+                ممنوع التصوير
+
+            </h3>
+
+
+            <p>
+
+                نرجو منكم لطفًا عدم التقاط الصور
+                أو تسجيل الفيديوهات أثناء الحفل.
+
+            </p>
+
+
+        </div>
+
+
+        <!-- NO CHILDREN -->
+
+        <div class="instruction">
+
+
+            <div class="instruction-icon">
+
+                <img
+                    src="no-children.png"
+                    alt="ممنوع الأطفال">
+
+            </div>
+
+
+            <h3>
+
+                ممنوع اصطحاب الأطفال
+
+            </h3>
+
+
+            <p>
+
+                نرجو حضوركم دون اصطحاب الأطفال،
+                مع خالص محبتنا وتقديرنا لتفهمكم.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 6 — FINAL
+===================================================== -->
+
+<section class="section">
+
+<div class="glass reveal">
+
+    <div class="ornament">
+        ♡ ✦ ♡
+    </div>
+
+
+    <h2 class="final-title">
+
+        ننتظر حضوركم بكل حب
+
+    </h2>
+
+
+    <p class="final-text">
+
+        فرحتنا لا تكتمل إلا بوجودكم معنا،
+        ونتمنى أن يكون هذا اليوم ذكرى جميلة
+        تبقى في قلوبنا جميعًا.
+
+    </p>
+
+
+    <div class="signature">
+
+        خالد و سارة
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <strong>
+
+        خالد و سارة 🤍
+
+    </strong>
+
+
+    <div
+        style="
+            margin-top:8px;
+            font-size:.82rem
+        ">
+
+        صُنع بكل حب
+
+    </div>
+
+</footer>
+
+
+</main>
+
+
+<script>
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const opening =
+    document.getElementById("opening");
+
+
+const envelope =
+    document.getElementById("envelope");
+
+
+const main =
+    document.getElementById("main");
+
+
+const music =
+    document.getElementById("music");
+
+
+const musicButton =
+    document.getElementById("musicButton");
+
+
+/* =========================================================
+   OPEN INVITATION
+========================================================= */
+
+envelope.addEventListener(
+    "click",
+    openInvitation
+);
+
+
+function openInvitation(){
+
+    opening.classList.add("open");
+
+    main.style.display =
+        "block";
+
+    musicButton.style.display =
+        "block";
+
+
+    music.volume =
+        .25;
+
+
+    music.play().catch(()=>{});
+
+
+    musicPlaying =
+        true;
+
+
+    musicButton.textContent =
+        "◼";
+
+
+    setTimeout(()=>{
+
+        opening.style.display =
+            "none";
+
+
+        initReveal();
+
+    },1500);
+
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+let musicPlaying =
+    false;
+
+
+musicButton.addEventListener(
+    "click",
+    async()=>{
+
+
+        if(musicPlaying){
+
+            music.pause();
+
+            musicPlaying =
+                false;
+
+            musicButton.textContent =
+                "♫";
+
+
+        }else{
+
+
+            try{
+
+                await music.play();
+
+                musicPlaying =
+                    true;
+
+                musicButton.textContent =
+                    "◼";
+
+            }catch(e){}
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+/*
+   10 September 2026
+   15:00
+*/
+
+const weddingDate =
+    new Date(
+        2026,
+        8,
+        10,
+        15,
+        0,
+        0
+    ).getTime();
+
+
+function updateCountdown(){
+
+
+    const now =
+        Date.now();
+
+
+    const distance =
+        weddingDate - now;
+
+
+    if(distance <= 0){
+
+
+        document.getElementById(
+            "countdown"
+        ).innerHTML =
+
+        `<div style="
+            width:100%;
+            text-align:center;
+            font-family:Amiri,serif;
+            font-size:1.5rem;
+            color:#fff8ed;
+        ">
+            أهلاً بكم في فرحتنا 🤍
+        </div>`;
+
+
+        return;
+
+    }
+
+
+    const days =
+        Math.floor(
+            distance /
+            (1000*60*60*24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (distance %
+            (1000*60*60*24)) /
+            (1000*60*60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (distance %
+            (1000*60*60)) /
+            (1000*60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (distance %
+            (1000*60)) /
+            1000
+        );
+
+
+    document.getElementById(
+        "days"
+    ).textContent =
+        String(days)
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "hours"
+    ).textContent =
+        String(hours)
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        String(minutes)
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
+        String(seconds)
+        .padStart(2,"0");
+
+}
+
+
+updateCountdown();
+
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+function initReveal(){
+
+
+    const elements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+
+    const observer =
+        new IntersectionObserver(
+
+            entries=>{
+
+                entries.forEach(
+                    entry=>{
+
+
+                        if(
+                            entry.isIntersecting
+                        ){
+
+                            entry.target
+                                .classList
+                                .add("visible");
+
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+
+
+            {
+                threshold:.10
+            }
+
+        );
+
+
+    elements.forEach(
+        element =>
+            observer.observe(
+                element
+            )
+    );
+
+}
+
+
+/* =========================================================
+   QR CODE
+========================================================= */
+
+window.addEventListener(
+    "load",
+    ()=>{
+
+
+        const qrElement =
+            document.getElementById(
+                "qrcode"
+            );
+
+
+        if(
+            qrElement &&
+            typeof QRCode !== "undefined"
+        ){
+
+
+            new QRCode(
+                qrElement,
+                {
+
+                    text:
+                    "https://maps.app.goo.gl/98e6VtAHeRUcicar6",
+
+                    width:160,
+
+                    height:160,
+
+                    colorDark:
+                        "#0d2119",
+
+                    colorLight:
+                        "#ffffff",
+
+                    correctLevel:
+                        QRCode.CorrectLevel.H
+
+                }
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   GALLERY DRAG
+========================================================= */
+
+const gallery =
+    document.getElementById(
+        "gallery"
+    );
+
+
+let isDown =
+    false;
+
+
+let startX;
+
+
+let scrollLeft;
+
+
+gallery.addEventListener(
+    "mousedown",
+    e=>{
+
+
+        isDown =
+            true;
+
+
+        gallery.style.cursor =
+            "grabbing";
+
+
+        startX =
+            e.pageX -
+            gallery.offsetLeft;
+
+
+        scrollLeft =
+            gallery.scrollLeft;
+
+    }
+);
+
+
+gallery.addEventListener(
+    "mouseleave",
+    ()=>{
+
+
+        isDown =
+            false;
+
+
+        gallery.style.cursor =
+            "grab";
+
+    }
+);
+
+
+gallery.addEventListener(
+    "mouseup",
+    ()=>{
+
+
+        isDown =
+            false;
+
+
+        gallery.style.cursor =
+            "grab";
+
+    }
+);
+
+
+gallery.addEventListener(
+    "mousemove",
+    e=>{
+
+
+        if(!isDown)
+            return;
+
+
+        e.preventDefault();
+
+
+        const x =
+            e.pageX -
+            gallery.offsetLeft;
+
+
+        const walk =
+            (x-startX)*1.4;
+
+
+        gallery.scrollLeft =
+            scrollLeft-walk;
+
+    }
+);
+
+
+/* =========================================================
+   TOUCH SWIPE
+========================================================= */
+
+let touchStartX =
+    0;
+
+
+gallery.addEventListener(
+    "touchstart",
+    e=>{
+
+
+        touchStartX =
+            e.touches[0].clientX;
+
+    },
+    {passive:true}
+);
+
+
+gallery.addEventListener(
+    "touchmove",
+    e=>{
+
+
+        const currentX =
+            e.touches[0].clientX;
+
+
+        const difference =
+            touchStartX -
+            currentX;
+
+
+        gallery.scrollLeft +=
+            difference*.35;
+
+
+        touchStartX =
+            currentX;
+
+    },
+    {passive:true}
+);
+
+
+/* =========================================================
+   AUTO GALLERY
+========================================================= */
+
+let galleryDirection =
+    1;
+
+
+setInterval(()=>{
+
+
+    if(
+        gallery.scrollWidth <=
+        gallery.clientWidth
+    )
+        return;
+
+
+    const maxScroll =
+        gallery.scrollWidth -
+        gallery.clientWidth;
+
+
+    if(
+        gallery.scrollLeft >=
+        maxScroll-5
+    ){
+
+        galleryDirection =
+            -1;
+
+    }
+
+
+    if(
+        gallery.scrollLeft <= 5
+    ){
+
+        galleryDirection =
+            1;
+
+    }
+
+
+    gallery.scrollBy({
+
+        left:
+            galleryDirection*1.2,
+
+        behavior:
+            "auto"
+
+    });
+
+
+},40);
+
+
+</script>
+
+
+</body>
+
+</html>
